@@ -151,6 +151,9 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
     </Link>
+    <PostBuildEvent>
+      <Command>copy "E:\Creatives\Cpp Projects\PythonConv\x64\Release\*.*" "E:\Creatives\Cpp Projects\PythonConv\Caller\bin\x64\Release\net5.0-windows" /y</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Exports.hpp" />
@@ -167,7 +170,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Modules.py" />
+    <None Include="Modules.py">
+      <DeploymentContent>false</DeploymentContent>
+    </None>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
